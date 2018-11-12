@@ -1,0 +1,17 @@
+parameters:
+    vairogs.utils.position.twig.pagination_extension.class: Vairogs\Utils\Position\Twig\PaginationExtension
+
+services:
+    vairogs.utils.position.twig.pagination_extension:
+        class: '%vairogs.utils.position.twig.pagination_extension.class%'
+        public: false
+        arguments:
+            - '%vairogs.utils.core.short_functions%'
+        tags:
+            -
+                name: twig.extension
+        calls:
+            -
+                - setContainer
+                -
+                    - '@service_container'
