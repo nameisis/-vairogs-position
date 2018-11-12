@@ -1,0 +1,21 @@
+parameters:
+    vairogs.utils.position.position_handler.class: Vairogs\Utils\Position\Service\PositionHandler
+    vairogs.utils.position.twig.position_extension.class: Vairogs\Utils\Position\Twig\PositionExtension
+
+services:
+    vairogs.utils.position.position_handler:
+        class: '%vairogs.utils.position.position_handler.class%'
+        public: false
+        arguments:
+            - '@doctrine'
+            - '%vairogs.utils.position.entities%'
+
+    vairogs.utils.position.twig.position_extension:
+        class: '%vairogs.utils.position.twig.position_extension.class%'
+        arguments:
+            - '@vairogs.utils.position.position_handler'
+            - '%vairogs.utils.core.short_functions%'
+        public: false
+        tags:
+            -
+                name: twig.extension
