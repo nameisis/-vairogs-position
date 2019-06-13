@@ -1,6 +1,6 @@
 {
     "name": "vairogs/vairogs-position",
-    "description": "Real Latvian CMS Utils: Position / Pagination library",
+    "description": "Utils: Position / Pagination library",
     "license": "MIT",
     "type": "library",
     "keywords": [
